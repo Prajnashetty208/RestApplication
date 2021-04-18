@@ -33,11 +33,8 @@ Create a directory called config under src/main/resources directory
 Create two directories called inventoryservice and orderservice under the src/main/resources/config directory
 
 
-In the inventoryservice and orderservice directories create three files namely
+In the orderservice directories create three files namely
 
-inventoryservice.properties
-inventoryservice-dev.properties
-inventoryservice-qa.properties
 orderservice.properties
 orderservice-dev.properties
 orderservice-qa.properties
@@ -55,9 +52,8 @@ spring:
     config:
       server:
         native:
-          # search-locations: file:///E:/config/inventoryservice
           # configuring the inventoryservice and orderservice
-           search-locations: classpath:/config/inventoryservice, classpath:/config/orderservice
+           search-locations: classpath:/config/responseservice, classpath:/config/orderservice
 #server port for the spring cloud config server
 server:
   port: 8888
@@ -69,8 +65,6 @@ Add the @EnableConfigServer annotation on the main class
 Start the server and verify the configuration for inventoryservice and orderservice for default, dev and qa profile
 
 
-
-URL to verify the inventoryservice configuraion - http://localhost:8888/inventoryservice/dev
 
 URL to verify the inventoryservice configuraion - http://localhost:8888/orderservice/dev
 
@@ -89,10 +83,10 @@ cloud:
     config:
       server:
         git:
-          uri: git@gitlab.com:classpath-spring-microservices/orderservice.git
+          uri: git@gitlab.com:Prajnashetty208/Configservice.git
 
 
-Configure the inventoryservice git repo
+Configure the responseservice git repo
 
 spring:
   profiles:
@@ -101,10 +95,10 @@ spring:
     config:
       server:
         git:
-          uri: git@gitlab.com:classpath-spring-microservices/orderservice.git
+          uri: git@gitlab.com:Prajnashetty208/Configservice.git
           repos:
-            inventoryservice:
-              uri: git@gitlab.com:classpath-spring-microservices/inventoryservice.git
+            responseservice:
+              uri: git@gitlab.com:Prajnashetty208/Configservice.git
               clone-on-startup: true
 
 
