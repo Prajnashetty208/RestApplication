@@ -1,3 +1,6 @@
 spring:
   application:
     name: configserver
+
+encrypt:
+  key: TESTING

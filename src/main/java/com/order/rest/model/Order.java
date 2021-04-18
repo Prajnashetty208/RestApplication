@@ -1,4 +1,4 @@
-package com.order.message.model;
+package com.order.rest.model;
 
 import lombok.*;
 

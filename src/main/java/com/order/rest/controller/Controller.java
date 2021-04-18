@@ -1,7 +1,7 @@
-package com.order.message.controller;
+package com.order.rest.controller;
 
-import com.order.message.model.Order;
-import com.order.message.service.OrderService;
+import com.order.rest.model.Order;
+import com.order.rest.service.OrderService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

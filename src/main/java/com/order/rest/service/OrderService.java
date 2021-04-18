@@ -1,6 +1,6 @@
-package com.order.message.service;
+package com.order.rest.service;
 
-import com.order.message.model.Order;
+import com.order.rest.model.Order;
 
 import java.util.Set;
 
