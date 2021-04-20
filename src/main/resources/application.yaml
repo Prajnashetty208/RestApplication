@@ -1,33 +1,15 @@
 server:
   port: 8001
 
-spring:
-  datasource:
-    username: sa
-    password: {cipher}9a20bb74a6744d622cbd334baac618514c3ab44b776cc2cad02c51b603e532a5
-    url: jdbc:h2:mem:orderTable
-    driver-class-name: org.h2.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create
-    show-sql: true
-    properties:
-      hibernate:
-        format-sql: true
-#For Config service
-  profiles:
-    active: git #'git' to pick from GIT #'native' for local
-  cloud:
-    config:
-      server:
-#        native:
-#          search-location: classpath:/config/orderservice,classpath:/config/orderservice
-        git:
-          uri: https://github.com/Prajnashetty208/Configservice.git
-          repos:
-            requestservice:
-              uri: https://github.com/Prajnashetty208/Configservice.git
-              clone-on-startup: true
+#Register with  Eureka config
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka
 
 
 
