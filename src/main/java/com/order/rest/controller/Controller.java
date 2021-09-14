@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Set;
 
 @RestController
@@ -19,7 +20,7 @@ public class Controller {
     public OrderService service;
 
     @PostMapping(value = "/save", produces = "application/json", consumes = "application/json")
-    public ResponseEntity<Order> publish(@RequestBody Order request){
+    public ResponseEntity<Order> publish(@RequestBody Order request) throws IOException {
         return new ResponseEntity<Order>(service.save(request), HttpStatus.OK);
     }
 

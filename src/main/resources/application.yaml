@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8555
 
 #Register with  Eureka config
 eureka:
@@ -10,6 +10,30 @@ eureka:
     fetch-registry: true
     service-url:
       default-zone: http://localhost:8761/eureka
-
-
-
+#
+#resilience4j:
+#  circuitbreaker:
+#    instances:
+#      inventoryservice:
+#        register-health-indicator: true
+#        ring-buffer-size-in-closed-state: 5
+#        ring-buffer-size-in-half-open-state: 3
+#        wait-duration-in-open-state: 30s
+#        failure-rate-threshold: 50
+#        record-exceptions:
+#          - java.io.IOException
+#          - java.util.concurrent.TimeoutException
+#          - org.springframework.web.client.ResourceAccessException
+#          - java.lang.IllegalStateException
+#
+#management:
+#  endpoint:
+#    health:
+#      show-details: always
+#  health:
+#    circuitbreakers:
+#      enabled: true
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
